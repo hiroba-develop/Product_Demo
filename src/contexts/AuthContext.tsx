@@ -33,7 +33,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      const parsedUser = JSON.parse(storedUser);
+      setUser(parsedUser);
+      // ユーザーのセットアップ状態に基づいてリダイレクト設定
+      setShouldRedirectToSetup(!parsedUser.isSetupComplete);
     } else {
       setShouldRedirectToLogin(true);
     }
