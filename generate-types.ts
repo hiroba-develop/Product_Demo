@@ -1,7 +1,7 @@
 import { generate } from "openapi-typescript-codegen";
 
 generate({
-  input: "./api/mietoru-api.yaml",
+  input: "./api/swagger.yaml",
   output: "./src/api",
   httpClient: "fetch",
   useOptions: true,
