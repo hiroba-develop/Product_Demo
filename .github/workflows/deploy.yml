@@ -8,8 +8,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  actions: write
-  deployments: write
 
 concurrency:
   group: "pages"
@@ -45,11 +43,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-      actions: write
-      deployments: write
 
     environment:
       name: github-pages
@@ -58,8 +51,6 @@ jobs:
     steps:
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
-        with:
-          enablement: true
 
       - name: Deploy to GitHub Pages
         id: deployment
