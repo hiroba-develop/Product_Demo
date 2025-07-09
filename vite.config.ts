@@ -8,5 +8,6 @@ export default defineConfig({
   publicDir: "public",
   server: {
     port: 5173,
+    allowedHosts: ["localhost:5173", "35.74.40.37:5173", "product.jp"],
   },
 });
