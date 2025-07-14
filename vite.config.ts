@@ -1,10 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-
+// @ts-ignore
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/Product_Demo/",
+  base: "/",
   publicDir: "public",
   server: {
     port: 5173,
